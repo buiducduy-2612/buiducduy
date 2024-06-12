@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="./css/_font.css" />
+  <link rel="stylesheet" href="./css/repeet.css" />
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./js/slick.min.js"></script>
+
+  <title>REPEET</title>
+</head>
+
+<body class="f-neuer">
+  <!-- <video autoplay muted loop id="myVideo" style="position: absolute; width: 100%;">
+      <source src="https://static.vecteezy.com/system/resources/previews/002/230/177/mp4/realistic-light-blue-meteor-shower-with-black-background-free-video.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video> -->
+  <div class=" light" onclick="switchLight()"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
+  <div id="bg-loading">
+    <img src="./images/repeet/repeet-icon.png?nf_resize=smartcrop" />
+    <p class="f-neuer">REPEET</p>
+  </div>
+  <div id="banner" class="d-flex flex-wrap container-fluid">
+    <div class="banner-menu d-flex align-items-center justify-content-between px-3 py-4 w-100">
+      <div class="d-flex align-items-center" onclick="resetAll()" style="cursor: pointer;">
+        <img src="./images/repeet/repeet-icon.png?nf_resize=smartcrop" class="mr-2 img-invert"
+          style="max-width: 50px" />
+        <span class="f-neuer" style="font-size: 1.5rem;">REPEET</span>
+      </div>
+      <div style="flex: 1; max-width: calc(100% - 450px)" class="d-desktop">
+        <ul class="d-flex align-items-center justify-content-between p-0 m-0">
+          <li><a onclick="activeThread('section-context')">Context</a></li>
+          <li><a onclick="activeThread('section-wwd')">What we do</a></li>
+          <!-- <li><a onclick="activeThread('section-oms')">Our Mission</a></li> -->
+          <li><a onclick="activeThread('section-wwr')">Brand</a></li>
+          <li><a onclick="activeThread('section-op')">Our Process</a></li>
+          <li><a onclick="activeThread('section-products')">Our products</a></li>
+          <li><a onclick="activeThread('section-partners')">Our partners</a></li>
+        </ul>
+      </div>
+      <div class="d-flex align-items-center">
+        <a href="https://namanh-event-viatt.netlify.app/"
+          style="cursor: pointer; color: var(--color); text-decoration: none;font-size: 1.5rem;">Nam Anh.</a>
+      </div>
+    </div>
+    <div class="d-mobile w-100 align-items-center justify-content-center text-center">
+      <ul class="p-0 m-0">
+        <li class="active"><a data-tranfer="section-context" onclick="activeThread('section-context')">Context</a></li>
+        <li class="active"><a data-tranfer="section-wwd" onclick="activeThread('section-wwd')">What we do</a></li>
+        <!-- <li class="active"><a data-tranfer="section-oms" onclick="activeThread('section-oms')">Our Mission</a></li> -->
+        <li class="active"><a data-tranfer="section-wwr" onclick="activeThread('section-wwr')">Brand</a></li>
+        <li class="active"><a data-tranfer="section-op" onclick="activeThread('section-op')">Our Process</a></li>
+        <li class="active"><a data-tranfer="section-products" onclick="activeThread('section-products')">Our
+            products</a></li>
+        <li class="active"><a data-tranfer="section-partners" onclick="activeThread('section-partners')">Our
+            partners</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="body">
+    <div class="section section-context d-flex align-items-center justify-content-center flex-wrap">
+      <div class="my-5">
+        <iframe width="1080" height="601"
+          src="https://www.youtube.com/embed/QF0DnxYS3XI?autoplay=1&controls=0&rel=0&autoplay=1&loop=1"
+          title="Repeet Revise Video 2" frameborder="0"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <div class="d-flex flex-wrap justify-content-center align-items-center w-100 pt-3 text-center">
+        <div class="container">
+          <div class="row my-5">
+            <div class="col-md-12">
+              <img src="./images/repeet/2.png" class="img-fluid" />
+            </div>
+          </div>
+          <div class="row my-5">
+            <div class="col-md-12">
+              <img src="./images/repeet/1.png" class="img-fluid" />
+            </div>
+          </div>
+          <div class="row my-5">
+            <div class="col-md-12">
+              <img src="./images/repeet/3.png" class="img-fluid" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="section section-wwd">
+      <h2>
+        We transform <span class="t-green">wasted PET bottles</span> collected
+        in Vietnam into <span class="t-green">fashion products.</span>
+      </h2>
+    </div>
+    <div class="section section-oms">
+      <h2>
+        To make
+        <span class="t-green">sustainable materials commonplace</span> in the
+        garment industry, toward a <span class="t-green">future</span> where
+        <span class="t-green">fashion</span> has
+        <span class="t-green">a positive impact</span> on the environment.
+      </h2>
+    </div>
+    <div class="section section-op d-flex flex-wrap align-items-center justify-content-center">
+      <div class="w-100">
+        <ul class="steps d-flex flex-wrap mb-0">
+          <li class="step" onclick="setStep(0)">
+            <div class="step-control">
+              <div class="step-number">
+                <span class="step-num">1</span>
+                <img src="./images/repeet/ch.png?nf_resize=smartcrop" class="step-img" class="img-fluid" />
+              </div>
+              <div>
+                <h4 class="step-title">COLLECT</h4>
+                <!-- <small class="font-weight-bold">(City <i class="fa fa-arrow-right" style="font-size: 10px;"></i>
+                  Countryside /</small>
+                <small class="font-weight-bold">River <i class="fa fa-arrow-right" style="font-size: 10px;"></i>
+                  Ocean)</small> -->
+                <p>
+                  Used plastic bottles are collected across provinces and cities
+                  <span style="white-space: nowrap;">in <span class="t-green">Vietnam</span>.</span>
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="step step-break" onclick="setStep(1)">
+            <div class="step-control">
+              <div class="step-number">
+                <span class="step-num">2</span>
+                <img src="./images/repeet/m.png?nf_resize=smartcrop" style="filter: brightness(1.2);" class="step-img"
+                  class="img-fluid" />
+              </div>
+              <div>
+                <h4 class="step-title">WASH and CHIP</h4>
+                <p>
+                  The bottles are cleaned and sterilised to remove any nasties.
+                  Then dried and shredded into flakes.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="step" onclick="setStep(2)">
+            <div class="step-control">
+              <div class="step-number">
+                <span class="step-num">3</span>
+                <img src="./images/repeet/b.png?nf_resize=smartcrop" class="step-img" class="img-fluid" />
+              </div>
+              <div>
+                <h4 class="step-title">MELT and FORM</h4>
+                <p>
+                  Bottle flakes is melted and squeeze into fiber.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="step" onclick="setStep(3)">
+            <div class="step-control">
+              <div class="step-number">
+                <span class="step-num">4</span>
+                <img src="./images/repeet/c.png?nf_resize=smartcrop" class="step-img" class="img-fluid" />
+              </div>
+              <div>
+                <h4 class="step-title">SPIN</h4>
+                <p>
+                  Using fiber to mixed with cotton to form yarn or spin directy to <span
+                    style="white-space: nowrap;">filament yarn.</span>
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="step" onclick="setStep(4)">
+            <div class="step-control">
+              <div class="step-number">
+                <span class="step-num">5</span>
+                <img src="./images/repeet/v.png?nf_resize=smartcrop" style="filter: brightness(1.2);" class="step-img"
+                  class="img-fluid" />
+              </div>
+              <div>
+                <h4 class="step-title">KNIT or WEAVE</h4>
+                <p>
+                  Using the yarn to knit and weave to knitted fabric/ woven fabric.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="step" onclick="setStep(5)">
+            <div class="step-control">
+              <div class="step-number">
+                <span class="step-num">6</span>
+                <img src="./images/repeet/s1.png?nf_resize=smartcrop" style="filter: brightness(1.3);" class="step-img"
+                  class="img-fluid" />
+              </div>
+              <div>
+                <h4 class="step-title">CREATE</h4>
+                <p>
+                  Using the fabric to do the sewing and created the <span style="white-space: nowrap;">final
+                    products</span> - <span style="white-space: nowrap;">REPEET clothing.</span>
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="step-line w-100">
+          <i class="fa fa-chevron-right"></i>
+        </div>
+        <div class="step-h-imgs d-desktop">
+          <div class="img-step flex-wrap justify-content-around mt-5" step="0">
+            <div class="d-flex align-items-center justify-content-between" style="width: 47vw;">
+              <div class="text-center" style="max-width: 20vw;">
+                <h4 class="font-weight-bold">FROM CITY</h4>
+                <img src="./images/repeet/10.png" class="img-fluid" />
+              </div>
+              <div class="text-center" style="max-width: 5vw;">
+                <p class="c-front__statement">→</p>
+              </div>
+              <div class="text-center" style="max-width: 20vw;">
+                <h4 class="font-weight-bold">TO COUNTRYSIDE</h4>
+                <img src="./images/repeet/9.png" class="img-fluid" />
+              </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-between" style="width: 47vw;">
+              <div class="text-center" style="max-width: 20vw;">
+                <h4 class="font-weight-bold">FROM RIVER</h4>
+                <img src="./images/repeet/11.png" class="img-fluid" />
+              </div>
+              <div class="text-center" style="max-width: 5vw;">
+                <p class="c-front__statement">→</p>
+              </div>
+              <div class="text-center" style="max-width: 20vw;">
+                <h4 class="font-weight-bold">TO OCEAN</h4>
+                <img src="./images/repeet/12.png" class="img-fluid" />
+              </div>
+            </div>
+          </div>
+          <div class="img-step flex-wrap mt-5 text-center" step="1">
+            <img src="./images/repeet/99.png" class="img-fluid" style="max-width: 70vw; margin: 0 auto" />
+          </div>
+          <div class="img-step flex-wrap mt-5 text-center" step="2">
+            <img src="./images/repeet/14.png" class="img-fluid" style="max-width: 70vw; margin: 0 auto" />
+          </div>
+          <div class="img-step flex-wrap mt-5 text-center" step="3">
+            <img src="./images/repeet/15.png" class="img-fluid" style="max-width: 70vw; margin: 0 auto" />
+          </div>
+          <div class="img-step flex-wrap mt-5 text-center" step="4">
+            <img src="./images/repeet/16.png" class="img-fluid" style="max-width: 70vw; margin: 0 auto" />
+          </div>
+          <div class="img-step flex-wrap mt-5 text-center" step="5">
+            <img src="./images/repeet/17.png" class="img-fluid" style="max-width: 70vw; margin: 0 auto" />
+          </div>
+        </div>
+      </div>
+      <div class="carousel slide d-mobile my-5" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="./images/repeet/10.png?nf_resize=smartcrop">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./images/repeet/11.png?nf_resize=smartcrop">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./images/repeet/12.png?nf_resize=smartcrop">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./images/repeet/13.png?nf_resize=smartcrop">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./images/repeet/14.png?nf_resize=smartcrop">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./images/repeet/15.png?nf_resize=smartcrop">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./images/repeet/16.png?nf_resize=smartcrop">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="./images/repeet/17.png?nf_resize=smartcrop">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section-wwr">
+      <!-- <div class="d-flex flex-wrap w-100 lego-control">
+            <ul class="d-flex flex-wrap w-100">
+                <li class="d-flex align-items-center justify-content-center" style="--move: 300%; --delay: .9s">Rethink</li>
+                <li class="d-flex align-items-center justify-content-center" style="--move: 200%; --delay: .3s">Relook</li>
+                <li class="d-flex align-items-center justify-content-center" style="--move: 100%; --delay: .7s">Recollect</li>
+                <li class="d-flex align-items-center justify-content-center">Redo</li>
+                <li class="d-flex align-items-center justify-content-center" style="--move: -100%; --delay: .9s">Relive</li>
+                <li class="d-flex align-items-center justify-content-center" style="--move: -200%; --delay: .7s">Reuse</li>
+                <li class="d-flex align-items-center justify-content-center" style="--move: -300%; --delay: .3s">Repeat</li>
+            </ul>
+            <div id="form-quiz">
+                <p>Please help us gather them together!</p>
+                <button onclick="startGame()">Hit me!</button>
+            </div>
+            <div id="form-aws" class="w-100 text-center">
+                <img src="./images/namanh_profile/Fabric/repeet-icon.png?nf_resize=smartcrop" class="img-invert" style="max-width: 300px;animation-name: circle;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                animation-duration: 20s;" />
+                <h2 class="mt-4" style="color: var(--color)">REPEET</h2>
+                <div class="d-flex justify-content-center align-items-center mt-4">
+                    <video autoplay width="100%" height="100%" loop="" muted="" playsinline="" class="js-video">
+                        <source src="https://repeet.vn/wp-content/uploads/2022/04/Ani_Repeet_Mec_1_1.mp4" type="video/mp4">
+                      </video>
+                      <video autoplay width="100%" height="100%" loop="" muted="" playsinline="" class="js-video">
+                        <source src="https://repeet.vn/wp-content/uploads/2022/04/Ani_Repeet_Mec_2_1.mp4" type="video/mp4">
+                      </video>
+                      <video autoplay width="100%" height="100%" loop="" muted="" playsinline="" class="js-video">
+                        <source src="https://repeet.vn/wp-content/uploads/2022/04/Ani_Repeet_Mec_3_1.mp4" type="video/mp4">
+                      </video>
+                      <video autoplay width="100%" height="100%" loop="" muted="" playsinline="" class="js-video">
+                        <source src="https://repeet.vn/wp-content/uploads/2022/04/Ani_Repeet_Mec_4_1.mp4" type="video/mp4">
+                      </video>
+                </div>
+            </div>
+        </div> -->
+      <div class="c-front__hero js-hero">
+        <div class="c-front__video-wrapper">
+          <video width="100%" height="100%" autoplay="" loop="" muted="" playsinline="" class="d-desktop"
+            style="border-radius: 25px;">
+            <source src="https://repeet.vn/wp-content/uploads/2022/03/repeet_homepage.mp4" type="video/mp4">
+          </video>
+          <video width="100%" height="100%" autoplay="" loop="" muted="" playsinline="" class="d-mobile">
+            <source src="https://repeet.vn/wp-content/uploads/2022/04/repeet_homepage_mobile.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="c-front__about js-section mt-master px-2" id="about" tabindex="-1">
+        <div class="c-front__section c-front__section--no-conclusion">
+          <div class="c-front__opening">
+            <h3 class="c-front__text">
+              Repeet® is a Vietnamese textile brand specialized in manufacturing alternative material solutions for the
+              fashion industry and beyond.
+            </h3>
+          </div>
+          <div class="c-front__content">
+            <h2 class="c-front__statement">
+              Mission → Make sustainable materials commonplace in our market and further abroad.
+            </h2>
+          </div>
+        </div>
+
+        <div class="c-front__section mt-master c-front__section--no-conclusion">
+          <div class="c-front__opening">
+            <h3 class="c-front__text">
+              At Repeet® we work hard to change the status quo in the garment industry, and create a future where
+              fashion is clean.
+            </h3>
+          </div>
+          <div class="c-front__content">
+            <h2 class="c-front__statement">
+              Vision → A future where fashion has positive impact on the environment.
+            </h2>
+          </div>
+        </div>
+
+        <div class="c-front__section my-master c-front__section--values">
+          <div class="c-front__opening">
+            <h3 class="c-front__text">
+              Repeet® transforms plastic waste into textiles. We do this through partnerships to promote a circular
+              economy that benefits the community.
+            </h3>
+          </div>
+          <div class="c-front__content">
+            <h2 class="c-front__statement">
+              Values → Connection,<br>
+              Openness &amp; Change.
+            </h2>
+          </div>
+          <div class="c-front__conclusion c-front__conclusion--full">
+            <div class="c-front__column">
+              <p class="c-front__small-text">
+                We seek connection with the partners in our supply chain to increase closeness and each others
+                capabilities to venture into a new clean era with more power.
+              </p>
+            </div>
+            <div class="c-front__column">
+              <p class="c-front__small-text">
+                Being open with our technology, and process is not only a mandate, it is the way in which our actions
+                can have more meaning and impact.
+              </p>
+            </div>
+            <div class="c-front__column">
+              <p class="c-front__small-text">
+                We can build a better future. We seek the alternative, through changing our now.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="c-front__ending my-master">
+        <div class="c-front__section c-front__section--no-conclusion">
+          <h1 class="c-front__statement text-center">
+            Do Great<br>
+            Things.<br>
+            <p class="mt-2">Repeet<sup>®</sup></p>
+          </h1>
+          <div class="c-front__text c-front__ending-statement">
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="section section-products d-flex align-items-center justify-content-center">
+      <div class="products-control d-flex py-5">
+        <div class="preview d-flex align-items-center justify-content-center">
+          <img src="./images/repeet/24.png" class="img-fluid" />
+        </div>
+        <div class="thumbnail d-flex flex-wrap flex-column">
+          <div class="thumb-item active">
+            <img src="./images/repeet/24.png" class="img-fluid" />
+          </div>
+          <div class="thumb-item">
+            <img src="./images/repeet/18.png" class="img-fluid" />
+          </div>
+          <div class="thumb-item">
+            <img src="./images/repeet/20.png" class="img-fluid" />
+          </div>
+          <div class="thumb-item">
+            <img src="./images/repeet/22.png" class="img-fluid" />
+          </div>
+          <div class="thumb-item">
+            <img src="./images/repeet/26.png" class="img-fluid" />
+          </div>
+          <div class="thumb-item">
+            <img src="./images/repeet/28.png" class="img-fluid" />
+          </div>
+          <div class="thumb-item">
+            <img src="./images/repeet/30.png" class="img-fluid" />
+          </div>
+          <div class="thumb-item">
+            <img src="./images/repeet/marvel.jpg" class="img-fluid" />
+          </div>
+          <div class="thumb-item">
+            <img src="./images/repeet/32.png" class="img-fluid" />
+          </div>
+          <div class="thumb-item">
+            <img src="./images/repeet/36.png" class="img-fluid" />
+          </div>
+
+          <div class="thumb-item">
+            <img src="./images/repeet/o.png" class="img-fluid" />
+          </div>
+          <div class="thumb-item">
+            <img src="./images/repeet/p1.jpeg" class="img-fluid" />
+          </div>
+          <div class="thumb-item">
+            <img src="./images/repeet/p2.png" class="img-fluid" />
+          </div>
+          <div class="thumb-item">
+            <img src="./images/repeet/t.jpeg" class="img-fluid" />
+          </div>
+          <div class="thumb-item">
+            <img src="./images/repeet/tee.jpeg" class="img-fluid" />
+          </div>
+          <div class="thumb-item">
+            <img src="./images/repeet/y.jpeg" class="img-fluid" />
+          </div>
+          <div class="thumb-item">
+            <img src="./images/repeet/so.jpg" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section-partners d-flex align-items-center">
+      <div class="d-flex flex-wrap align-items-center justify-content-center">
+        <ul class="d-flex flex-wrap">
+          <li><img src="./images/repeet/19.png?nf_resize=smartcrop" class="img-fluid" /></li>
+          <li><img src="./images/repeet/21.png?nf_resize=smartcrop" class="img-fluid" /></li>
+          <li><img src="./images/repeet/23.png?nf_resize=smartcrop" class="img-fluid" /></li>
+          <li><img src="./images/repeet/25.png?nf_resize=smartcrop" class="img-fluid" /></li>
+          <li><img src="./images/repeet/27.png?nf_resize=smartcrop" class="img-fluid" /></li>
+          <li><img src="./images/repeet/29.png?nf_resize=smartcrop" class="img-fluid" /></li>
+          <li><img src="./images/repeet/31.png?nf_resize=smartcrop" class="img-fluid" /></li>
+          <li><img src="./images/repeet/33.png?nf_resize=smartcrop" class="img-fluid" /></li>
+          <li><img src="./images/repeet/35.png?nf_resize=smartcrop" class="img-fluid" /></li>
+          <li><img src="./images/repeet/Coolmate.png?nf_resize=smartcrop" class="img-fluid" /></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+    const lo = JSON.parse(localStorage.getItem('isLight'));
+    $(function () {
+      if (lo != null) {
+        $('body').addClass('lighting');
+      }
+      $("#bg-loading").fadeIn("fast");
+      setTimeout(function () {
+        $("#bg-loading").fadeOut("slow");
+      }, 1500);
+      $('.thumb-item img').click(function () {
+        $(this).closest('.thumb-nail').removeClass('active');
+        $('.preview img').attr('src', $(this).attr('src'));
+        $(this).closest('.thumb-item').addClass('active');
+      });
+    });
+    function activeThread(section) {
+      $(".section.active").removeClass("active");
+      $("." + section).addClass("active");
+      $("#banner").addClass("active");
+      $("[data-tranfer]").parent().removeClass('active');
+      $("[data-tranfer='" + section + "']").parent().addClass('active');
+    }
+    function startGame() {
+      $('.section-wwr ul li').toggleClass('active');
+      $('#form-quiz').fadeOut();
+      $('#form-aws').toggleClass('active');
+    }
+    function resetAll() {
+      $('.active').removeClass('active');
+      $('.d-mobile li').addClass('active');
+    }
+    function switchLight() {
+      if ($('body').hasClass('lighting')) {
+        localStorage.removeItem('isLight');
+      } else {
+        localStorage.setItem('isLight', true);
+      }
+      $('body').toggleClass('lighting');
+    }
+    function setStep(i) {
+      $('.steps .step.active').removeClass('active');
+      $('[step]').not(':eq(' + i + ')').fadeOut('fast');
+      $('.steps .step').eq(i).addClass('active');
+      $('[step=' + i + ']').fadeIn();
+      if (i < 1) {
+        $('[step=' + i + ']').addClass('d-flex');
+      } else {
+        $('[step="0"]').removeClass('d-flex');
+      }
+    }
+  </script>
+</body>
+
+</html>

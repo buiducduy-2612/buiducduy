@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WHAT IT ISNT VIETNAM</title>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background-color: #FFF32E; /* Set background color of body */
+        }
+        .container {
+            text-align: center;
+        }
+        #qrcode {
+            width: 300px;
+            height: 300px;
+            padding: 10px;
+            margin: 20px auto;
+            border: dashed 2px #000000;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFF32E; /* Set background color of QR code container */
+            position: relative;
+        }
+        input {
+            border-radius: 5px;
+            height: 30px;
+            border: solid 1px #000000;
+            min-width: 300px;
+            margin-top: 10px;
+        }
+        button {
+            height: 40px;
+            min-width: 300px;
+            color: white;
+            background: black;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        p {
+            font-weight: bold;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+        #logo-preview {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none; /* So the logo doesn't interfere with QR code interactions */
+        }
+    </style>
+  </head>
+
+<body>
+    <div class="container">
+        <h1>WHAT IT ISNT QR CODE PRODUCT</h1>
+        <div>
+            <label>Nhập text để xuất ra QR code:</label><br/>
+            <input id="qr-code" type="text" required/>
+        </div>
+        <div id="qrcode">
+            <img id="logo-preview" src="https://wiisnt.vn/images/logo.svg" alt="Logo"/>
+        </div>
+        <button onclick="generate()">Tạo mã</button>
+        <button onclick="downloadQRCode()">Tải xuống</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        const logoUrl = 'https://wiisnt.vn/images/logo.svg'; // URL of the logo
+        var qrCodeDownload;
+
+        function generate() {
+            const val = document.getElementById('qr-code').value.trim();
+
+            // Clear the existing QR code if present
+            document.getElementById('qrcode').innerHTML = '<img id="logo-preview" src="https://wiisnt.vn/images/logo.svg" alt="Logo"/>';
+
+            // Create a smaller QR code for display
+            new QRCode(document.getElementById('qrcode'), {
+                text: val,
+                width: 300,
+                height: 300,
+                colorDark : "#000000",
+                colorLight : "#FFF32E"
+            });
+
+            // Create a larger QR code for download
+            const canvas = document.createElement('canvas');
+            canvas.width = 2000;
+            canvas.height = 2000;
+            const context = canvas.getContext('2d');
+            context.fillStyle = "#FFF32E";
+            context.fillRect(0, 0, canvas.width, canvas.height);
+            qrCodeDownload = new QRCode(canvas, {
+                text: val,
+                width: 2000,
+                height: 2000,
+                colorDark : "#000000",
+                colorLight : "#FFF32E"
+            });
+
+            // Draw the logo on the large QR code
+            addLogoToCanvas(canvas, logoUrl, 400);
+
+            // Attach the large QR code canvas to a hidden element for later download
+            const hiddenDiv = document.createElement('div');
+            hiddenDiv.style.display = 'none';
+            hiddenDiv.appendChild(canvas);
+            document.body.appendChild(hiddenDiv);
+        }
+
+        function addLogoToCanvas(canvas, logoUrl, logoMaxSize) {
+            const context = canvas.getContext('2d');
+            const logo = new Image();
+            logo.src = logoUrl;
+            logo.onload = function() {
+                const logoWidth = logo.naturalWidth;
+                const logoHeight = logo.naturalHeight;
+                const aspectRatio = logoWidth / logoHeight;
+
+                let drawWidth, drawHeight;
+                if (logoWidth > logoHeight) {
+                    drawWidth = logoMaxSize;
+                    drawHeight = logoMaxSize / aspectRatio;
+                } else {
+                    drawHeight = logoMaxSize;
+                    drawWidth = logoMaxSize * aspectRatio;
+                }
+
+                context.drawImage(logo, (canvas.width - drawWidth) / 2, (canvas.height - drawHeight) / 2, drawWidth, drawHeight);
+            };
+        }
+
+        function downloadQRCode() {
+            if (qrCodeDownload) {
+                const canvas = qrCodeDownload._oDrawing._elCanvas;
+                const imgUrl = canvas.toDataURL('image/png');
+                const a = document.createElement('a');
+                a.href = imgUrl;
+                a.download = 'qrcode.png';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            } else {
+                alert("Vui lòng tạo mã QR trước khi tải xuống");
+            }
+        }
+    </script>
+</body>
+</html>
